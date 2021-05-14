@@ -1,0 +1,259 @@
+/* =============================================================================
+   HTML5 CSS Reset Minified - Eric Meyer
+   ========================================================================== */
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+li{list-style:none}
+
+
+/* =============================================================================
+   My CSS
+   ========================================================================== */
+
+/* ---- base ---- */
+
+html,body{
+	width:100%;
+	height:100%;
+	background:#111;
+}
+
+html{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body{
+  font:normal 75% Arial, Helvetica, sans-serif;
+}
+
+canvas{
+  display:block;
+  vertical-align:bottom;
+}
+
+
+
+/* ---- particles.js container ---- */
+
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  background-image: url('https://i.pinimg.com/originals/b8/8e/59/b88e5919775afd0de88efa8ebcaf1250.png');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+input[type=radio] {
+  display: none;
+}
+
+.card {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: transform .4s ease;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  max-height: 600px;
+  height: 100%;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+#item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2 {
+  transform: translatex(-40%) scale(.8);
+  opacity: .4;
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
+  transform: translatex(40%) scale(.8);
+  opacity: .4;
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
+  transform: translatex(0) scale(1);
+  opacity: 1;
+  z-index: 1;
+
+  img {
+    box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+  }
+}
+
+.player {
+
+  border-radius: 8px;
+  min-width: 320px;
+  padding: 16px 10px;
+}
+
+.upper-part {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  height: 36px;
+  overflow: hidden;
+	margin-left: 120px;
+}
+
+.play-icon{ margin-right: 10px; }
+
+.song-info {
+  width: calc(100% - 32px);
+  display: block;
+}
+
+.song-info .title {
+  color: #403d40;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+
+
+.subtitle, .time {
+  font-size: 12px;
+  line-height: 16px;
+  color: #c6c5c6;
+}
+
+
+
+
+.info-area {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  transition: transform .4s ease-in;
+}
+
+
+#item-2:checked ~ .player #test {
+  transform: translateY(0);
+}
+
+#item-2:checked ~ .player #test  {
+  transform: translateY(-40px);
+}
+
+#item-3:checked ~ .player #test  {
+  transform: translateY(-80px);
+}
+
+
+.playpause label {
+  display: block;
+  box-sizing: border-box;
+  width: 0;
+  height: 18px;
+  border-color: transparent transparent transparent #fff;
+  transition: 100ms all ease;
+  cursor: pointer;
+  border-style: double;
+  border-width: 0px 0 0px 15px;
+}
+.playpause input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+.playpause input[type="checkbox"]:checked + label {
+  border-style: solid;
+  border-width: 10px 0 10px 15px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  #myRange {display: none}
+
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 15%;
+  height: 1px;
+  background: #fff;
+  transform: rotate(-90deg);
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-top: -70px;
+  margin-left: 60px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+  width: 10px;
+  height: 10px;
+  background:#03e9f4;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}

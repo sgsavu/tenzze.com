@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TENZZE - Artists</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="styleArtists0.css">
+</head>
+<body onload="startSpin()">
+
+<!-- count particles -->
+
+<!-- particles.js container -->
+<div id="particles-js">
+  <div class="container">
+      <input type="radio" name="slider" id="item-1" checked>
+      <input type="radio"  name="slider" id="item-2">
+      <input type="radio" name="slider" id="item-3">
+    <div class="cards">
+      <label class="card" onclick="sebiClick()" for="item-1" id="song-1">
+        <img src="armenz.jpg" alt="song">
+      </label>
+      <label class="card" onclick="leoClick()" for="item-2" id="song-2">
+        <img src="hassan1.jpg" alt="song">
+      </label>
+      <label class="card" onclick="emmieClick()" for="item-3" id="song-3">
+        <img src="lilemmie.jpg" alt="song">
+      </label>
+    </div>
+    <div class="player">
+    <div class="upper-part">
+      <div class="playpause">
+   <input type="checkbox" onclick="playPause()" value="None" id="playpause" name="check" checked/>
+   <label for="playpause" tabindex=1></label>
+   <audio id="audio1" loop src="xeltt.wav"></audio>
+   <audio id="audio2" loop src="dam.wav"></audio>
+   <audio id="audio3" loop src="sakkogod.wav"></audio>
+ </div>
+      <div class="info-area" id="test">
+        <label class="song-info" id="song-info-1">
+          <div class="title">Xeltt</div>
+          <div class="sub-line">
+            <a href="https://open.spotify.com/artist/6GSXmQ2hqtC1rE0x86FPr6?si=lgUas4juTDyrqFyp2z5kNQ">
+  <div class="subtitle">ArmenZ</div>
+</a>
+
+
+          </div>
+        </label>
+        <label class="song-info" id="song-info-2">
+          <div class="title">Location</div>
+          <div class="sub-line">
+            <a href="https://open.spotify.com/artist/1URnnhqYAYcrqrcwql10ft?si=lRfTt63KTM2EHzEeGKMWNw">
+  <div class="subtitle">Leo The Unknown</div>
+          </a>
+
+          </div>
+        </label>
+        <label class="song-info" id="song-info-3">
+          <div class="title">Clip</div>
+          <div class="sub-line">
+            <a href="https://open.spotify.com/artist/4O15NlyKLIASxsJ0PrXPfz?si=3ZtFoTauQxqAQNQag3slpg">
+  <div class="subtitle">Emmie</div>
+</a>
+
+          </div>
+        </label>
+
+      </div>
+
+    </div>
+
+    <input type="range" min="0" max="1.0" value="0.5" class="slider" step="0.1" id="myRange">
+  </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+<!--  -->
+<script src="particles.js"></script>
+<script src="appArtists.js"></script>
+
+
+
+<script>
+var xeltt = document.getElementById("audio1");
+var armenz = document.getElementById("item-1");
+var dam = document.getElementById("audio2");
+var leo = document.getElementById("item-2");
+var sakkogod = document.getElementById("audio3");
+var emmie = document.getElementById("item-3");
+
+function playPause() {
+  if (armenz.checked)
+  {
+    if (xeltt.paused)
+    {
+      xeltt.play();
+
+    }
+    else
+      xeltt.pause();
+  }
+  else if (leo.checked)
+  {
+
+    if (dam.paused)
+      dam.play();
+    else
+      dam.pause();
+  }
+  else if (emmie.checked)
+  {
+
+    if (sakkogod.paused)
+      sakkogod.play();
+    else
+      sakkogod.pause();
+  }
+
+}
+function leoClick(){
+
+  xeltt.pause();
+  sakkogod.pause();
+  document.getElementById("playpause").checked = true;
+}
+
+function emmieClick(){
+
+  dam.pause();
+  xeltt.pause();
+  document.getElementById("playpause").checked = true;
+}
+
+function sebiClick(){
+
+  sakkogod.pause();
+  dam.pause();
+  document.getElementById("playpause").checked = true;
+}
+
+
+var slider = document.getElementById("myRange");
+
+
+slider.oninput = function() {
+
+  xeltt.volume = this.value;
+  dam.volume = this.value;
+  sakkogod.volume = this.value;
+}
+
+
+
+
+
+
+</script> <!-- stats.js -->
+
+
+</body>
+</html>

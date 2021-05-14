@@ -1,0 +1,256 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: grid;
+  align-items: center;
+
+  justify-items: center;
+  margin: 0;
+  background-color: #000;
+}
+
+section {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 20px #fff,
+    -20px 0 80px #f0f,
+    20px 0 80px #0ff,
+    inset 0 0 50px #fff,
+    inset 50px 0 80px #f0f,
+    inset -50px 0 80px #0ff,
+    inset 50px 0 300px #f0f,
+    inset -50px 0 300px #0ff;
+  animation: pulsate 6s linear infinite;
+}
+
+@keyframes pulsate {
+  50% {
+    box-shadow:
+      0 0 20px #fff,
+      20px 0 80px #f0f,
+      -20px 0 80px #0ff,
+      inset 0 0 50px #fff,
+      inset -50px 0 80px #f0f,
+      inset 50px 0 80px #0ff,
+      inset -50px 0 300px #f0f,
+      inset 50px 0 300px #0ff;
+  }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.main{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, #9c27b0, #8ecdff);
+
+}
+
+
+.information{
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  transform: translateY(-50%);
+}
+
+
+#circle{
+  width: 1000px;
+  height: 1000px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  border-radius: 50%;
+  transform: rotate(0deg);
+  transition: 1s;
+}
+
+.feature img{
+
+  width: 70px;
+}
+
+.feature{
+  position: absolute;
+  display: flex;
+  color: #fff;
+}
+.feature div{
+  margin-left: 30px;
+
+
+}
+.feature div p{
+  margin-top: 8px;
+}
+
+.one{
+  top: 430px;
+  right:50px;
+}
+
+.two{
+  top:50px;
+  left: 420px;
+  transform: rotate(-90deg);
+
+}
+
+.three{
+  bottom: 430px;
+  left: 50px;
+  transform: rotate(-180deg);
+
+}
+
+.four{
+  bottom: 50px;
+  right: 390px;
+  transform: rotate(-270deg);
+}
+
+.mobile{
+
+  width: 200px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+
+  z-index: 1;
+}
+
+
+#upBtn{
+
+  cursor: pointer;
+}
+a{
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 40px 0;
+    color: #03e9f4;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+
+}
+a:hover{
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+
+a:nth-child(2){
+    filter: hue-rotate(110deg);
+}
+a span{
+    position: absolute;
+    display: block;
+}
+a span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+a span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+
+
+
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-color: #b61924;
+  background-image: url('https://i.pinimg.com/originals/b8/8e/59/b88e5919775afd0de88efa8ebcaf1250.png');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
